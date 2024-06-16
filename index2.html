@@ -1,6 +1,6 @@
 <html>
 <script>
-  
+const mark_obj = {mark:0x13371337,mark1:0x1717dead,obj:{}};  
 var ref = new Array(0x10000);
 const FIXED_ARRAY_HEADER_SIZE = 8n;
 var buf = new ArrayBuffer(16);
@@ -318,7 +318,7 @@ function install_primitives() {
 }
 
 old_space_array = Array(1, 2);
-const mark_obj = {mark:0x13371337,mark1:0x1717dead,obj:{}};
+
 
 function CopyElement(from, to) {
   to[0] = from[0];
